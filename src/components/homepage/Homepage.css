@@ -1,0 +1,28 @@
+
+#welcome-section {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 2rem; 
+    border: 2px #413f3f solid;
+    border-radius: 3px;
+    /* box-shadow: rgba(256, 256, 256, 0.2) 0px 2px 8px 0px; */
+    border: 2px rgba(223, 173, 8, 0.699) solid
+    
+}
+
+#welcome-message h1 {
+    /* font-family: "Poppins"; */
+    font-size: 50px;
+    font-weight: bolder;
+    margin: 1rem;
+    text-align: center;
+}
+
+#welcome-message p {
+    /* font-family: "Poppins"; */
+    font-size: 20px;
+    font-weight: 100px;
+    margin: 1rem;
+    text-align: center;
+    font-style: italic;
+}
