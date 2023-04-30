@@ -18,7 +18,7 @@ function Features() {
       </div>
 
       <div className='support-frame'>
-        <h5>Grades Required To Hit A Specific CGPA</h5>
+        <h5>Grades Required To Hit A Desired CGPA</h5>
       </div> 
 
       <div className='support-frame'>

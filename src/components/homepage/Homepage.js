@@ -8,7 +8,7 @@ function Homepage() {
             <h1>Welcome to Daquiver's GPA SelfCare</h1>
             <p>
                 This website is created for students in the University Of Ghana for GPA calculation purposes only.<br/>
-                If this is your first time, kindly go through the FAQ before you begin.<br/>
+                If this is your first time, kindly go through the user manual before you begin.<br/>
             </p>
         </div>
     </section>

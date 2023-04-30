@@ -1,22 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Form.css'
 
 
 function RgpaForm() {
+  const [details, setDetails] = useState({
+    old_cgpa: "",old_chours: "",new_cgpa: "",new_chours: "",course_num: ""
+  })
+
+  const handleChange = async (event) => {
+    const { name, value } = event.target;
+    setDetails((prev) => {
+      return {...prev, [name]: value};
+    })
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(details)
+  }
+
   return (
     <form>
       <div className='form-field'>
-        <p>Required Grades to Hit A CGPA in a Semester</p>
-        <label for='old-cgpa'>Enter prev CGPA:<input type= 'text' placeholder='e.g. old cgpa'></input></label>
-        <label for='old-credit-hrs'>Enter prev credit hours:<input type= 'text' placeholder='e.g. old credit hours'></input></label>
-        <label for='new-cgpa'>Expected GPA to hit:<input type= 'text' placeholder='e.g. expected CGPA'></input></label>
-        <label for='new-credit-hrs'>Enter curr credit hours:<input type= 'text' placeholder='e.g. new credit hours'></input></label>
+        <p>Required Grades to Hit A Desired CGPA in a Semester</p>
+        <label for='old_cgpa'>Enter previous CGPA:<input type= 'text' name='old_cgpa' placeholder='e.g. 2.56' onChange={handleChange}></input></label>
+        <label for='old_chours'>Enter previous credit hours:<input type= 'text' name='old_chours' placeholder='e.g. 32' onChange={handleChange}></input></label>
+        <label for='new_cgpa'>Enter your desired CGPA :<input type= 'text' name='new_cgpa' placeholder='e.g. 3.00' onChange={handleChange}></input></label>
+        <label for='new-chours'>Enter current credit hours:<input type= 'text' name='new_chours' placeholder='e.g. 18' onChange={handleChange}></input></label>
+        <label for='course_num'>Current number of courses:<input type= 'text' name='course_num' placeholder='e.g. 6' onChange={handleChange}></input></label>
       </div>
         
         
       <div className='form-buttons'>
           <button type='submit'>Cancel</button>
-          <button type='submit'>Calculate</button>
+          <button type='submit' onClick={handleSubmit}>Calculate</button>
       </div>
     </form>
   )
