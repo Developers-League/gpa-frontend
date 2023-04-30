@@ -2,11 +2,12 @@ form{
     display: flex;
     padding: 2rem;
     flex-direction: column;
-    height: auto;
     width: 18rem;
     border: 2px solid rgba(230, 225, 225, 0.384);
+    border-radius: 5px;
     font-size: small;
     font-style: italic;
+    margin-top: 2rem;
 
 }
 
@@ -21,6 +22,7 @@ form{
     text-align: center;
     font-size: 18px;
     font-style: normal;
+    border-bottom: 1px solid rgba(230, 225, 225, 0.384);
 }
 
 .form-buttons{
