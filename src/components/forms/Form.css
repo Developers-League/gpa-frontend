@@ -37,6 +37,7 @@ label{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    font-size: 12px;
     gap: 10px;
 }
 
@@ -45,6 +46,8 @@ input {
     border: 1px solid white;
     border-radius: 5px;
     padding-left: 10px;
+    margin-left: 10px;
+    /* width: 183px; */
 }
 
 button{

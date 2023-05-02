@@ -22,12 +22,12 @@ function RgpaForm() {
   return (
     <form>
       <div className='form-field'>
-        <p>Required Grades to Hit A Desired CGPA in a Semester</p>
-        <label for='old_cgpa'>Enter previous CGPA:<input type= 'text' name='old_cgpa' placeholder='e.g. 2.56' onChange={handleChange}></input></label>
-        <label for='old_chours'>Enter previous credit hours:<input type= 'text' name='old_chours' placeholder='e.g. 32' onChange={handleChange}></input></label>
-        <label for='new_cgpa'>Enter your desired CGPA :<input type= 'text' name='new_cgpa' placeholder='e.g. 3.00' onChange={handleChange}></input></label>
-        <label for='new-chours'>Enter current credit hours:<input type= 'text' name='new_chours' placeholder='e.g. 18' onChange={handleChange}></input></label>
-        <label for='course_num'>Current number of courses:<input type= 'text' name='course_num' placeholder='e.g. 6' onChange={handleChange}></input></label>
+        <p className='title'>Required Grades to Hit A Desired CGPA in a Semester</p>
+        <label for='old_cgpa'>Enter previous CGPA:<input type= 'number' min={0.0} max={4.0} step={0.1} width={190} name='old_cgpa' placeholder='e.g. 2.56' onChange={handleChange} style={{ width: "213px" }}></input></label>
+        <label for='old_chours'>Enter previous credit hours:<input type= 'number' min={0}  name='old_chours' placeholder='e.g. 32' onChange={handleChange}></input></label>
+        <label for='new_cgpa'>Enter your desired CGPA:<input type= 'number' min={0.0} max={4.0} step={0.1} name='new_cgpa' placeholder='e.g. 3.00' onChange={handleChange} style={{ width: "226px" }}></input></label>
+        <label for='new-chours'>Enter current credit hours:<input type= 'number' min={0} name='new_chours' placeholder='e.g. 18' onChange={handleChange}></input></label>
+        <label for='course_num'>Current number of courses:<input type= 'number' min={0} name='course_num' placeholder='e.g. 6' onChange={handleChange}></input></label>
       </div>
         
         
@@ -38,5 +38,6 @@ function RgpaForm() {
     </form>
   )
 }
+
 
 export default RgpaForm

@@ -23,7 +23,7 @@ function GcgpaForm() {
         <div className='form-field'>
           <p>Enter your grades and their corresponding credit hours.</p>
           <label for='grades'>Grade for each course:<input type= 'text' name='grades' placeholder='e.g. A, B+, C...' onChange={handleChange}></input></label>
-          <label for='credits'>Credit hours for each course:<input type='text' name='credit' placeholder='e.g. 2, 3, 3...' onChange={handleChange}></input></label>
+          <label for='credits'>Credit hours for each course:<input type='number' min={0} name='credit' placeholder='e.g. 2, 3, 3...' onChange={handleChange}></input></label>
         </div>
         
         <div className='form-buttons'>
