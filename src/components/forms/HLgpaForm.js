@@ -6,8 +6,8 @@ import './Form.css'
 function HLgpaForm() {
   const [details, setDetails] = useState({
     old_cred: "", new_cred: "", old_cgpa: ""
-
   });
+  const [result, setState] = useState(null);
 
   const handleChange = async (event) => {
     const { name, value } = event.target;
@@ -25,9 +25,9 @@ function HLgpaForm() {
     <form>
       <div className='form-field'>
         <p>Minimum and Maximum Attainable CGPA In A Semester</p>
-        <label for='old_cgpa'>Your current CGPA: <input type='number' min={0.0} max={4.0} step={0.1} name='old_cgpa' placeholder='e.g. 3.0' onChange={handleChange} style={{ width: "193px" }}></input></label>
-        <label for='old_cred'>Current credit hours: <input type='number' min={0}  name='old_cred' placeholder='e.g. 36' onChange={handleChange}></input></label>
-        <label for='new_cred'>Credit hours for this semester: <input type='number' min={0} name='new_cred' placeholder='e.g. 18' onChange={handleChange}></input></label>
+        <label>Your current CGPA: <input type='number' min={0.0} max={4.0} step={0.1} name='old_cgpa' placeholder='e.g. 3.0' onChange={handleChange} style={{ width: "193px" }}></input></label>
+        <label>Current credit hours: <input type='number' min={0}  name='old_cred' placeholder='e.g. 36' onChange={handleChange}></input></label>
+        <label>Credit hours for this semester: <input type='number' min={0} name='new_cred' placeholder='e.g. 18' onChange={handleChange}></input></label>
       </div>
   
       <div className='form-buttons'>

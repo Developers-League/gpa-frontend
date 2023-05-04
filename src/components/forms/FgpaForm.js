@@ -25,11 +25,13 @@ function FgpaForm() {
         cgpa2: details.cgpa2 , 
         cgpa3: details.cgpa3 , 
         cgpa4: details.cgpa4 
-      }
-      )
+      });
+
+      setResult(response.data.result); 
+      window.alert(response.data.result);
     }
-     catch (error) {
-        console.error(error);
+    catch (error) {
+    console.log(error);   
     }
   }
 
@@ -37,12 +39,11 @@ function FgpaForm() {
     <form >
         <div className='form-field'>
           <p>Please enter your CGPA for each level.</p>
-          <label for='Level 100'>Level 100: <input type= 'number' min={0.0} max={4.0} step={0.1} name= 'cgpa1' placeholder='e.g. 3.43' onChange={handleChange} style={{ width: "183px" }}></input></label>
-          <label for='Level 200'>Level 200: <input type= 'number' min={0.0} max={4.0} step={0.1} name= 'cgpa2' placeholder='e.g. 2.56' onChange={handleChange} style={{ width: "183px" }}></input></label>
-          <label for='Level 300'>Level 300: <input type= 'number' min={0.0} max={4.0} step={0.1} name= 'cgpa3' placeholder='e.g. 3.30' onChange={handleChange} style={{ width: "183px" }}></input></label>
-          <label for='Level 400'>Level 400: <input type= 'number' min={0.0} max={4.0} step={0.1} name= 'cgpa4' placeholder='e.g. 3.15' onChange={handleChange} style={{ width: "183px" }}></input></label>
+          <label>Level 100: <input type= 'number' min={0.0} max={4.0} step={0.1} name= 'cgpa1' placeholder='e.g. 3.43' onChange={handleChange} style={{ width: "183px" }}></input></label>
+          <label>Level 200: <input type= 'number' min={0.0} max={4.0} step={0.1} name= 'cgpa2' placeholder='e.g. 2.56' onChange={handleChange} style={{ width: "183px" }}></input></label>
+          <label>Level 300: <input type= 'number' min={0.0} max={4.0} step={0.1} name= 'cgpa3' placeholder='e.g. 3.30' onChange={handleChange} style={{ width: "183px" }}></input></label>
+          <label>Level 400: <input type= 'number' min={0.0} max={4.0} step={0.1} name= 'cgpa4' placeholder='e.g. 3.15' onChange={handleChange} style={{ width: "183px" }}></input></label>
         </div>
-        
         
         <div className='form-buttons'>
             <button type='submit'>Cancel</button>
