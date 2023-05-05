@@ -19,16 +19,22 @@ function FgpaForm() {
    const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(details)
+
+    const cgpa1 = parseFloat(details.cgpa1)
+    const cgpa2 = parseFloat(details.cgpa2) 
+    const cgpa3 = parseFloat(details.cgpa3)
+    const cgpa4 = parseFloat(details.cgpa4)
+
     try{
      const response = await axios.post(url, {
-        cgpa1: details.cgpa1 ,
-        cgpa2: details.cgpa2 , 
-        cgpa3: details.cgpa3 , 
-        cgpa4: details.cgpa4 
+        cgpa1, cgpa2, cgpa3, cgpa4
       });
 
-      setResult(response.data.result); 
-      window.alert(response.data.result);
+      if (response.status === 200){
+        const result = response.data.result;
+        console.log(result)
+        setResult(result)
+      }; 
     }
     catch (error) {
     console.log(error);   
@@ -46,7 +52,7 @@ function FgpaForm() {
         </div>
         
         <div className='form-buttons'>
-            <button type='submit'>Cancel</button>
+            <button type='button'>Cancel</button>
             <button type='submit' onClick={handleSubmit}>Calculate</button>
         </div>
     </form>
