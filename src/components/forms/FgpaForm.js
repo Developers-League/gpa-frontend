@@ -13,7 +13,7 @@ function FgpaForm() {
   const handleChange = (event) => {
     const { name, value } = event.target;
     
-    // To check if values are lesser than 4.0 and set value to 4.0 if the inputed value is greater than 4.0
+    // Verify if values are lesser than 4.0 and set value to 4.0 if the inputed value is greater than 4.0
     switch (name) {
       case 'cgpa1':
         setCgpa1(value > 4.0 ? 4.0 : value);
@@ -54,6 +54,14 @@ function FgpaForm() {
     }
   };
 
+  const handleCancel = () => {
+    setCgpa1("");
+    setCgpa2("");
+    setCgpa3("");
+    setCgpa4("");
+    setResult(null);
+  };
+
   return (
     <div>
       <form>
@@ -66,7 +74,7 @@ function FgpaForm() {
         </div>
 
         <div className='form-buttons'>
-          <button type='button'>Cancel</button>
+          <button type='button' onClick={handleCancel}>Cancel</button>
           <button type='submit' onClick={handleSubmit}>Calculate</button>
         </div>
       </form>
