@@ -86,8 +86,7 @@ function FgpaForm() {
           <p>Level 200 CGPA: {result.cgpa2}</p>
           <p>Level 300 CGPA: {result.cgpa3}</p>
           <p>Level 400 CGPA: {result.cgpa4}</p>
-          <p>Final GPA: {result.fgpa}</p>
-          <p>Classification: {result.classification}</p>
+          <p>Final GPA: {result.fgpa} ({result.classification})</p>
         </div>
       )}
     </div>
