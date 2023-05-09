@@ -63,7 +63,7 @@ function FgpaForm() {
   };
 
   return (
-    <div>
+    <div className='form-result'>
       <form>
         <div className='form-field'>
           <p>Please enter your CGPA for each level.</p>

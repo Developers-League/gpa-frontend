@@ -4,14 +4,13 @@ import './Form.css'
 
 
 function GcgpaForm() {
-  const url = "http://127.0.0.1:8000/api/calculate-fgpa";
+  const url = "http://127.0.0.1:8000/api/calc-gpa-and-cgpa";
   const [grades, setGrades] = useState("");
   const [credits, setCredits] = useState("");
   const [result, setResult] = useState(null);
 
-  const gradesRegex = /^[A-Z+, ]*$/;
-  const creditsRegex = /^[\d, ]*$/;
-
+  const gradesRegex = /^[A-Z+, ]*$/; // Grades input format
+  const creditsRegex = /^[\d, ]*$/;  // Grades input format
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -68,7 +67,7 @@ function GcgpaForm() {
     <div>
       <form>
           <div className='form-field'>
-            <p>Enter your grades and their corresponding credit hours.</p>
+            <p>Enter your grades and their corresponding credit hours to calculate your CGPA.</p>
             <label>Grade for each course:<input type= 'text' name='grades' value={grades} placeholder='e.g. A, B+, C...' pattern="[A-F+, ]*"  title="Please enter uppercase alphabets, '+' symbol, and commas only" onChange={handleChange}></input></label>
             <label>Credit hours for each course:<input type='text' min={0} name='credits' value={credits} pattern="\d+([,\s]\d+)*" title="Please enter comma-separated numbers only" placeholder='e.g. 2, 3, 3...' onChange={handleChange}></input></label>
           </div>
@@ -82,6 +81,7 @@ function GcgpaForm() {
       {result && (
         <div className='result'>
           <h3>Result</h3>
+          <p>{result.feedback}</p>
         </div>
       )}      
     </div>
