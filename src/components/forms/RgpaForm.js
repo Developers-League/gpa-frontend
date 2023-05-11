@@ -70,7 +70,7 @@ function RgpaForm() {
   };
 
   return (
-    <div>
+    <div className='form-result'>
       <form>
         <div className='form-field'>
           <p className='title'>Required Grades to Hit A Desired CGPA in a Semester</p>

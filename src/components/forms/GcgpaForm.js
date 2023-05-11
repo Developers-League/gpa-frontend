@@ -35,7 +35,7 @@ function GcgpaForm() {
       // To validate the format and pattern of input
       if (!gradesRegex.test(grades) || !creditsRegex.test(credits)) {
         // Validation failed, handle the error
-        console.error('Invalid input');
+        window.alert('Invalid input');
         return;
       }
 
@@ -64,7 +64,7 @@ function GcgpaForm() {
   };
 
   return (
-    <div>
+    <div className='form-result'>
       <form>
           <div className='form-field'>
             <p>Enter your grades and their corresponding credit hours to calculate your CGPA.</p>

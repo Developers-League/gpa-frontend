@@ -56,7 +56,7 @@ function HLgpaForm() {
   };
 
   return (
-    <div>
+    <div className='form-result'>
       <form>
         <div className='form-field'>
           <p>Minimum and Maximum Attainable CGPA In A Semester</p>
