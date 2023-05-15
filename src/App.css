@@ -7,7 +7,9 @@
 }
 
 .app {
-   margin:10px 10rem 10px 10rem;
-  /* text-align: center; */
-  /* background-color: #375797 */
+   /* margin:10px 10rem 10px 10rem; */
+   display: flex;
+   flex-direction: column;
+   /* justify-content: center;
+   align-items: center; */
 }

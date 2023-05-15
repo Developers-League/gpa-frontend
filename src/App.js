@@ -1,5 +1,5 @@
 import './App.css';
-// import Navbar from './components/navigation/Navbar';
+import Navbar from './components/navigation/Navbar';
 import Homepage from './components/homepage/Homepage';
 import Features from './components/features/Features';
 // import About from './components/aboutpage/About';
@@ -8,7 +8,7 @@ import Features from './components/features/Features';
 function App(){
   return (
     <div className='app'>
-      {/* <div className='nav'><Navbar/></div> */}
+      <div className='nav'><Navbar/></div>
       <div className='home'><Homepage/></div>
       <div className='features'><Features/></div>
       {/* <div className='about'><About/></div> */}

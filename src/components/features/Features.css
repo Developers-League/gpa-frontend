@@ -44,6 +44,7 @@
     cursor: pointer;
     /* border: 2px #413f3f solid; */
     box-shadow: rgba(223, 173, 8, 0.699) 0px 2px 8px 0px;
+    transition: 0.3s ease-in-out;
 }
 
 .support-frame {
@@ -53,8 +54,8 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 5rem;
-    width: 18rem;
+    height: 15rem;
+    width: 15rem;
 }
 
 .support-frame > h5 {
