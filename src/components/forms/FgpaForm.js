@@ -10,8 +10,15 @@ function FgpaForm() {
   const [cgpa4, setCgpa4] = useState("");
   const [result, setResult] = useState(null);
 
+
   const handleChange = (event) => {
     const { name, value } = event.target;
+
+    // Validate if the input is a positive number
+    if (value !== '' && (!/^\d*\.?\d+$/.test(value) || Number(value) < 0)) {
+      window.alert('Invalid input. Please enter a positive number.');
+      return;
+    }
     
     // Verify if values are lesser than 4.0 and set value to 4.0 if the inputed value is greater than 4.0
     switch (name) {
@@ -62,6 +69,10 @@ function FgpaForm() {
     setResult(null);
   };
 
+  const handleCloseResults = () => {
+    setResult(null);
+  }
+
   return (
     <div className='form-result'>
       <form>
@@ -87,6 +98,7 @@ function FgpaForm() {
           <p>Level 300 CGPA: {result.cgpa3}</p>
           <p>Level 400 CGPA: {result.cgpa4}</p>
           <p>Final GPA: {result.fgpa} ({result.classification})</p>
+          <button type='button' onClick={handleCloseResults}>Close</button>
         </div>
       )}
     </div>

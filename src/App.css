@@ -1,15 +1,18 @@
 * {
-  background-color: #3a3b3d;
-  color: white;
+  margin: 0;
 
   /* background-color: whitesmoke;
   color: black; */
 }
 
 .app {
-   /* margin:10px 10rem 10px 10rem; */
    display: flex;
    flex-direction: column;
-   /* justify-content: center;
-   align-items: center; */
+   justify-content: center;
+   align-items: center;
+}
+
+.home {
+  height: 50rem;
+  margin: 0;
 }

@@ -12,8 +12,15 @@ function RgpaForm() {
   const [courseNum, setCourseNum] = useState("");
   const [result, setResult] = useState(null);
 
+  const inputRegex = /^[\d, ]*$/;  // input format
+
   const handleChange = (event) => {
     const { name, value } = event.target;
+    // Validate if the input is a positive number
+    if (value !== '' && (!/^\d*\.?\d+$/.test(value) || Number(value) < 0)) {
+      window.alert('Invalid input. Please enter a positive number.');
+      return;
+    }
     
     // Verify if values are lesser than 4.0 and set value to 4.0 if the inputed value is greater than 4.0
     switch (name) {
@@ -42,6 +49,13 @@ function RgpaForm() {
     console.log(oldCgpa, oldChours, newCgpa, newChours, courseNum);
 
     try {
+       // To validate the format and pattern of input
+       if (!inputRegex.test(oldCgpa, oldChours, newCgpa, newChours, courseNum)) {
+        // Validation failed, handle the error
+        window.alert('Inputs cannot be negative.');
+        return;
+      }
+
       const response = await axios.post(url, {
         oldCgpa: parseFloat(oldCgpa),
         oldChours: parseFloat(oldChours),
@@ -69,6 +83,10 @@ function RgpaForm() {
     setResult(null);
   };
 
+  const handleCloseResults = () => {
+    setResult(null);
+  }
+
   return (
     <div className='form-result'>
       <form>
@@ -92,6 +110,7 @@ function RgpaForm() {
         <div className='result'>
           <h3>Result</h3>
           <p>{result.feedback}</p>
+          <button type='button' onClick={handleCloseResults}>Close</button>
         </div>
       )}
     </div>

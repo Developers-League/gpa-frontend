@@ -4,15 +4,12 @@ import './Navbar.css'
 function Navbar() {
   return (
     <header>
-      <div className='logo'>
-        SELFCARE
-      </div>
       <nav className='menu'>
         <ul>
-          <li><a href="#">HOME</a></li>
-          <li><a href="projectsSection">GPA CALCULATOR</a></li>
-          <li><a href="#" style={{borderRight: 'solid 2px rgba(223, 173, 8, 0.699)'}}>ABOUT</a></li>
-          <li><a href="#">CONTACT</a></li>
+          <li><a>Home</a></li>
+          <li><a>Gpa Calculator</a></li>
+          <li><a>Contact</a></li>
+          <li><a>About Us</a></li>
           </ul>
       </nav>
     </header>

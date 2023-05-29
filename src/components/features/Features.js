@@ -37,6 +37,10 @@ function Features() {
       <div className='support-frame' onClick={ () => handleClick('HLgpaForm')}>
         <h5>Minimum and Maximum Reachable GPA In A Semester</h5>
       </div>
+
+      <div className='support-frame'>
+        <h5>Convert Grade Weight</h5>
+      </div>
     </div>
 
     <div className='forms-container'>

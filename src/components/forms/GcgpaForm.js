@@ -10,7 +10,7 @@ function GcgpaForm() {
   const [result, setResult] = useState(null);
 
   const gradesRegex = /^[A-Z+, ]*$/; // Grades input format
-  const creditsRegex = /^[\d, ]*$/;  // Grades input format
+  const creditsRegex = /^[\d, ]*$/;  // Credit input format
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -35,7 +35,7 @@ function GcgpaForm() {
       // To validate the format and pattern of input
       if (!gradesRegex.test(grades) || !creditsRegex.test(credits)) {
         // Validation failed, handle the error
-        window.alert('Invalid input');
+        window.alert('Invalid input.');
         return;
       }
 
@@ -63,6 +63,10 @@ function GcgpaForm() {
     setResult(null)
   };
 
+  const handleCloseResults = () => {
+    setResult(null);
+  }
+
   return (
     <div className='form-result'>
       <form>
@@ -82,6 +86,7 @@ function GcgpaForm() {
         <div className='result'>
           <h3>Result</h3>
           <p>{result.feedback}</p>
+          <button type='button' onClick={handleCloseResults}>Close</button>
         </div>
       )}      
     </div>

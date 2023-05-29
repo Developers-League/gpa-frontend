@@ -9,8 +9,16 @@ function HLgpaForm() {
   const [newChours, setNewChours] = useState("");
   const [result, setResult] = useState(null);
 
+  const inputRegex = /^[\d, ]*$/;  // Credit input format
+
   const handleChange = async (event) => {
     const { name, value } = event.target;
+
+    // Validate if the input is a positive number
+    if (value !== '' && (!/^\d*\.?\d+$/.test(value) || Number(value) < 0)) {
+      window.alert('Invalid input. Please enter a positive number.');
+      return;
+    }
 
     switch (name) {
       case 'oldCgpa':
@@ -32,6 +40,13 @@ function HLgpaForm() {
     console.log(oldCgpa, oldChours, newChours);
 
     try {
+      // To validate the format and pattern of input
+      if (!inputRegex.test(oldCgpa, oldChours, newChours)) {
+        // Validation failed, handle the error
+        window.alert('Inputs cannot be negative.');
+        return;
+      }
+
       const response = await axios.post(url, {
         oldCgpa: parseFloat(oldCgpa),
         oldChours: parseFloat(oldChours),
@@ -55,6 +70,10 @@ function HLgpaForm() {
     setResult(null);
   };
 
+  const handleCloseResults = () => {
+    setResult(null);
+  }
+
   return (
     <div className='form-result'>
       <form>
@@ -77,6 +96,7 @@ function HLgpaForm() {
           <p>With a current CGPA of {result.oldCgpa}</p>
           <p>Minimum Attainable CGPA for this semester : {result.minCgpa} ({result.classificationMinCgpa})</p>
           <p>Maximum Attainable CGPA for this semester : {result.maxCgpa} ({result.classificationMaxCgpa})</p>
+          <button type='button' onClick={handleCloseResults}>Close</button>
         </div>
       )}
     </div>
