@@ -7,6 +7,7 @@ import './Features.css'
 
 function Features() {
   const [selectedForm, setSelectedForm] = useState('')
+  const [converterWidget, setConverterWidget] = useState('');
 
   // To toggle between form components
   const handleClick = (formName) => {
@@ -16,6 +17,8 @@ function Features() {
       setSelectedForm(formName);
     }
   };
+
+  const handleClick1 = () => {}
   return (
 
   <section id='support-features-container'>
@@ -38,7 +41,7 @@ function Features() {
         <h5>Minimum and Maximum Reachable GPA In A Semester</h5>
       </div>
 
-      <div className='support-frame'>
+      <div className='support-frame' onClick={ () => handleClick1()}>
         <h5>Convert Grade Weight</h5>
       </div>
     </div>
