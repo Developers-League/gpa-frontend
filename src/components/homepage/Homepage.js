@@ -14,6 +14,12 @@ function Homepage() {
             If this is your first time, kindly go through the user manual before you begin.
           </p>
         </div>
+
+        <div id='selfcare'>
+          <button id='selfcare-button'>SELFCARE</button>
+        </div>
+        
+
     </section>
   );
 }

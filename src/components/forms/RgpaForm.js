@@ -50,7 +50,7 @@ function RgpaForm() {
 
     try {
        // To validate the format and pattern of input
-       if (!inputRegex.test(oldCgpa, oldChours, newCgpa, newChours, courseNum)) {
+       if (inputRegex.test(oldCgpa, oldChours, newCgpa, newChours, courseNum)) {
         // Validation failed, handle the error
         window.alert('Inputs cannot be negative.');
         return;

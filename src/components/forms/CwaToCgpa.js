@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useState} from 'react'
+import axios from 'axios'
 
 function CwaToCgpa() {
     const url = "http://127.0.0.1:8000/api/convert-weight";
@@ -17,7 +18,7 @@ function CwaToCgpa() {
       
       // Verify if values are lesser than 4.0 and set value to 4.0 if the inputed value is greater than 4.0
       if (name === 'cwa' ) {
-          setCgpa(value > 4.0 ? 4.0 : value);
+          setCwa(value > 4.0 ? 4.0 : value);
     };
     
     const handleSubmit = async (event) => {

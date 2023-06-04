@@ -1,30 +1,80 @@
 
 #welcome-section {
     display: flex;
-    gap: 3rem;
+
     flex-direction: column;
     justify-content: center;
-    margin: 1rem 2rem; 
-    border: 2px #413f3f solid;
-    border-radius: 3px;
+    margin: 70px 200px 70px 200px; 
+    /* border: 2px #413f3f solid; */
+    /* border-radius: 3px; */
     /* box-shadow: rgba(256, 256, 256, 0.2) 0px 2px 8px 0px; */
-    border: 2px rgba(223, 173, 8, 0.699) solid
+    /* border: 2px rgba(223, 173, 8, 0.699) solid */
     
 }
 
 .welcome-message h1 {
-    /* font-family: "Poppins"; */
+    /* font-family: "Poppins";
     font-size: 70px;
     font-weight: bolder;
-    margin-top: 4rem;
+    margin-top: 1rem;
+    text-align: center; */
+    position: relative;
+    width: 900px;
+    height: 150px;
+    left: calc(50% - 875px/2 - 0.5px);
+    top: calc(50% - 286px/2 - 108px);
+    line-height: 80px;
+    font-family: 'Romanesco';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 70px;
     text-align: center;
+    text-transform: capitalize;
+    color: black;
+
 }
 
 .description-message p {
     /* font-family: "Poppins"; */
-    padding: 5rem;
+    padding: 10px 30px 10px 30px;
     font-size: 25px;
+    width: 650px;
+    height: 90px;
     font-weight: 300px;
-    margin: 1rem;
+    margin: 80px 150px 80px 150px ;
     text-align: center;
+    position: relative;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+
+}
+
+#selfcare {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:  0px 20px 30px 20px;
+}
+
+#selfcare-button {
+    width: 12rem;
+    height: 3.3rem;
+    border-radius: 25px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    background: #C7B13D;
+}
+
+#selfcare-button:hover {
+    cursor: pointer;
+    width: 12rem;
+    height: 3.3rem;
+    border-radius: 25px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    background: rgb(221, 187, 83);
 }
